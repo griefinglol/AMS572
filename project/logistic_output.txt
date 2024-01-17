@@ -1,0 +1,22 @@
+
+Call:
+glm(formula = factor, family = "binomial", data = train)
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept) -0.46844   12.75731  -0.037  0.97071   
+length      -0.04815    0.04314  -1.116  0.26437   
+width        0.85091    0.30419   2.797  0.00515 **
+height      -0.35366    0.13161  -2.687  0.00721 **
+wheel.base  -0.28920    0.11052  -2.617  0.00888 **
+---
+Signif. codes:  0 ¡®***¡¯ 0.001 ¡®**¡¯ 0.01 ¡®*¡¯ 0.05 ¡®.¡¯ 0.1 ¡® ¡¯ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 194.57  on 141  degrees of freedom
+Residual deviance: 136.35  on 137  degrees of freedom
+AIC: 146.35
+
+Number of Fisher Scoring iterations: 5
+

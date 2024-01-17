@@ -1,0 +1,99 @@
+[1] "summary base model"
+
+Call:
+glm(formula = factor, family = "binomial", data = train)
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept) -0.46844   12.75731  -0.037  0.97071   
+length      -0.04815    0.04314  -1.116  0.26437   
+width        0.85091    0.30419   2.797  0.00515 **
+height      -0.35366    0.13161  -2.687  0.00721 **
+wheel.base  -0.28920    0.11052  -2.617  0.00888 **
+---
+Signif. codes:  0 ¡®***¡¯ 0.001 ¡®**¡¯ 0.01 ¡®*¡¯ 0.05 ¡®.¡¯ 0.1 ¡® ¡¯ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 194.57  on 141  degrees of freedom
+Residual deviance: 136.35  on 137  degrees of freedom
+AIC: 146.35
+
+Number of Fisher Scoring iterations: 5
+
+[1] "summary both model"
+
+Call:
+glm(formula = Y ~ width + height + wheel.base, family = "binomial", 
+    data = train)
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept)   7.7841    10.2709   0.758  0.44852   
+width         0.6787     0.2540   2.672  0.00755 **
+height       -0.3945     0.1271  -3.104  0.00191 **
+wheel.base   -0.3206     0.1067  -3.005  0.00265 **
+---
+Signif. codes:  0 ¡®***¡¯ 0.001 ¡®**¡¯ 0.01 ¡®*¡¯ 0.05 ¡®.¡¯ 0.1 ¡® ¡¯ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 194.57  on 141  degrees of freedom
+Residual deviance: 137.63  on 138  degrees of freedom
+AIC: 145.63
+
+Number of Fisher Scoring iterations: 5
+
+[1] "summary stepACI model"
+
+Call:
+glm(formula = factor_new, family = "binomial", data = train)
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept)   7.7841    10.2709   0.758  0.44852   
+width         0.6787     0.2540   2.672  0.00755 **
+height       -0.3945     0.1271  -3.104  0.00191 **
+wheel.base   -0.3206     0.1067  -3.005  0.00265 **
+---
+Signif. codes:  0 ¡®***¡¯ 0.001 ¡®**¡¯ 0.01 ¡®*¡¯ 0.05 ¡®.¡¯ 0.1 ¡® ¡¯ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 194.57  on 141  degrees of freedom
+Residual deviance: 137.63  on 138  degrees of freedom
+AIC: 145.63
+
+Number of Fisher Scoring iterations: 5
+
+[1] "anova between two model"
+Analysis of Deviance Table
+
+Model 1: Y ~ length + width + height + wheel.base
+Model 2: Y ~ width + height + wheel.base
+  Resid. Df Resid. Dev Df Deviance
+1       137     136.34            
+2       138     137.63 -1  -1.2846
+null device 
+          1 
+null device 
+          1 
+[1] "test collinearity assumption"
+     width     height wheel.base 
+  4.651708   1.300281   5.086334 
+[1] "boxTidwell test"
+           MLE of lambda Score Statistic (t) Pr(>|t|)
+width             8.2144              0.5653   0.5728
+height           -4.6847              0.8015   0.4243
+wheel.base       -1.0914              0.4276   0.6696
+
+iterations =  3 
+
+Score test for null hypothesis that all lambdas = 1:
+F = 0.59942, df = 3 and 135, Pr(>F) = 0.6165
+
+[1] "p value"
+[1] 2.65199e-12
+[1] "reject H0"
+[1] "accuracy on test data"
+[1] 0.7096774
